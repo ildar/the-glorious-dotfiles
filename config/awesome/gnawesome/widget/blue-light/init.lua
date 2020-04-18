@@ -64,12 +64,16 @@ kill_state()
 local toggle_action = function()
 	awful.spawn.easy_async_with_shell(
 		[[
+		THEME=$(gsettings get org.gnome.desktop.interface gtk-theme |
+			sed s/.dark// | tr -d "'") ;
 		if [ ! -z $(pgrep redshift) ];
 		then
 			redshift -x && pkill redshift && killall redshift
+			gsettings set org.gnome.desktop.interface gtk-theme "$THEME"
 			echo 'OFF'
 		else
 			redshift -l 0:0 -t 4500:4500 -r &>/dev/null &
+			gsettings set org.gnome.desktop.interface gtk-theme "$THEME-dark"
 			echo 'ON'
 		fi
 		]],
