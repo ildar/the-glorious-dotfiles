@@ -44,7 +44,7 @@ local bottom_panel = function(s)
 	s.bluetooth   			= build_widget(require('widget.bluetooth')())
 	s.network       		= build_widget(require('widget.network')())
 	s.battery     			= build_widget(require('widget.battery')())
-	local layout_box 		= build_widget(require('widget.layoutbox')(s))
+	-- local layout_box 		= build_widget(require('widget.layoutbox')(s))
 	
 	local separator =  wibox.widget {
 		orientation = 'vertical',
@@ -73,10 +73,10 @@ local bottom_panel = function(s)
 					s.network,
 					s.bluetooth,
 					s.battery,
-					layout_box,
+					-- layout_box,
 					separator
-				},
-				require('widget.xdg-folders.trash')(),
+				} -- ,
+				-- require('widget.xdg-folders.trash')(),
 			},
 			bg = beautiful.background,
 			shape = function(cr, w, h)

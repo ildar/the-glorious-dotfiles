@@ -38,11 +38,11 @@ local top_panel = function(s)
 
 	local add_button 		= require('widget.open-default-app')(s)
 	local clock 			= require('widget.clock')(s)
-	s.updater 				= require('widget.package-updater')()
-	s.screen_rec 			= require('widget.screen-recorder')()
+	-- s.updater 				= require('widget.package-updater')()
+	-- s.screen_rec 			= require('widget.screen-recorder')()
 	s.mpd       			= require('widget.mpd')()
 	s.end_session			= require('widget.end-session')()
-	s.global_search			= require('widget.global-search')()
+	-- s.global_search			= require('widget.global-search')()
 
 	panel : setup {
 		layout = wibox.layout.ratio.horizontal,
@@ -56,9 +56,9 @@ local top_panel = function(s)
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(5),
-			s.updater,
-			s.screen_rec,
-			s.global_search,
+			-- s.updater,
+			-- s.screen_rec,
+			-- s.global_search,
 			s.mpd,
 			s.end_session
 		}
