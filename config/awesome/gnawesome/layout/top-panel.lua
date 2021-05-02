@@ -45,7 +45,7 @@ local top_panel = function(s)
 	s.global_search			= require('widget.global-search')()
 
 	panel : setup {
-		layout = wibox.layout.align.horizontal,
+		layout = wibox.layout.ratio.horizontal,
 		expand = 'none',
 		{
 			layout = wibox.layout.fixed.horizontal,
@@ -63,6 +63,7 @@ local top_panel = function(s)
 			s.end_session
 		}
 	}
+  panel.widget:set_ratio(1, 0.82)
 
 	return panel
 end
