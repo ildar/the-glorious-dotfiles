@@ -40,7 +40,9 @@ local top_panel = function(s)
 	local clock 			= require('widget.clock')(s)
 	-- s.updater 				= require('widget.package-updater')()
 	-- s.screen_rec 			= require('widget.screen-recorder')()
-	s.mpd       			= require('widget.mpd')()
+	s.bluetooth			= require('widget.bluetooth')()
+	s.network			= require('widget.network')()
+	s.battery			= require('widget.battery')()
 	s.end_session			= require('widget.end-session')()
 	-- s.global_search			= require('widget.global-search')()
 
@@ -59,11 +61,13 @@ local top_panel = function(s)
 			-- s.updater,
 			-- s.screen_rec,
 			-- s.global_search,
-			s.mpd,
+			s.bluetooth,
+			s.network,
+			s.battery,
 			s.end_session
 		}
 	}
-  panel.widget:set_ratio(1, 0.82)
+	panel.widget:set_ratio(1, 0.74)
 
 	return panel
 end

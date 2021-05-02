@@ -41,9 +41,7 @@ local bottom_panel = function(s)
 
 	s.search = require('widget.search-apps')()
 	s.tray_toggler  		= build_widget(require('widget.tray-toggle'))
-	s.bluetooth   			= build_widget(require('widget.bluetooth')())
-	s.network       		= build_widget(require('widget.network')())
-	s.battery     			= build_widget(require('widget.battery')())
+	s.mpd				= build_widget(require('widget.mpd')())
 	-- local layout_box 		= build_widget(require('widget.layoutbox')(s))
 	
 	local separator =  wibox.widget {
@@ -70,9 +68,7 @@ local bottom_panel = function(s)
 					spacing = dpi(10),
 					s.systray,
 					s.tray_toggler,
-					s.network,
-					s.bluetooth,
-					s.battery,
+					s.mpd,
 					-- layout_box,
 					separator
 				} -- ,
